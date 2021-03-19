@@ -13,7 +13,7 @@ console.log('Test - should say "Hello World!"', hello());
 
 
 // 2. Function to return an personalized hello, for example 'Hello, Jo!'
-function helloName( name ) {
+function helloName( name = 'Stranger') {
   let greeting = `Hello, ${name}!`;
   return greeting;
 }
@@ -56,17 +56,28 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
-function getLast( array ) {
-
+function getLast( array) {
+  if (array) {
+    let lastItem = array[array.length -1];
+    return lastItem;
+  }
 }
+console.log('test - last item array:' , getLast());
 
 // 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find
 function find( value, array ){
-
+  if (array) {
+    for (let i = 0; i<array.length; i++ ){
+      if (array[i] === value) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
-
+console.log('test - is value in array?' , find());
 // ----------------------
 // Stretch Goals
 // ----------------------
